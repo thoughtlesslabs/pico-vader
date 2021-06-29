@@ -75,27 +75,35 @@ function _draw()
 	drawbackground()
 
 	draw_character()
-	pal()
+	palt()
 end
 
 function drawbackground()
 	cls(15)
-	
-	rectfill(0,0,127,62,14)
 	fillp()
+	rectfill(0,0,127,66,14)
+
 	local c = {12,13,14}
-	for i=1,4 do
+	for i=1,6 do
 		if i%2 == 0 then
 			col = 2
 		else
 			col = 3
 		end
+				fillp(0b0000101001001010)
 		rectfill(0,62+(i*4),127,66+(i*4),c[col])
-		fillp(0b0000101001001010)
+
 	end
 	palt(0,false)
 	palt(13,true)
-	sspr(56,0,16,16,10,70,20,20)
+--	for i=0,14 do
+--		palt(i,i+1)
+--	end
+
+	sspr(56,0,16,16,10,71,20,20)
+	sspr(56,0,16,16,50,71,20,20)
+	sspr(56,0,16,16,80,71,25,25)
+	
 end
 
 function draw_character()
